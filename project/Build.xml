@@ -15,9 +15,6 @@
 		<compilerflag value="-Imacos/include"/>
 		<compilerflag value="-Iinclude"/>
 
-		<flag value="-framework"/>
-		<flag value="Gamekit"/>
-		
 		<file name="mac/GameCenter.mm"/>
 		
 	</files>
@@ -40,7 +37,11 @@
 		<files id="common"/>
 		<files id="iphone" if="iphone"/>
 		<files id="mac" if="mac"/>
-		
+
+		<section if="macos">
+			<vflag name="-framework" value="GameKit" />
+		</section>
+
 	</target>
 	
 	<target id="default">
